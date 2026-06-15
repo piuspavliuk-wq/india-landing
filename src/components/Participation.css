@@ -1,0 +1,194 @@
+.participation {
+  position: relative;
+  background: var(--bg-alt);
+  padding: 99px 0 120px;
+  overflow: hidden;
+}
+
+.participation__star {
+  position: absolute;
+  top: 74px;
+  left: 131px;
+  width: 122px;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.participation__leaves2 {
+  position: absolute;
+  top: 60px;
+  right: 120px;
+  width: 110px;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.participation__curve {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 480px);
+  width: 520px;
+  pointer-events: none;
+}
+
+.participation__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.participation__head {
+  text-align: right;
+  margin-bottom: 40px;
+}
+
+.participation__title {
+  color: var(--olive);
+}
+
+.participation__subtitle {
+  margin-top: 4px;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 1.21;
+  text-transform: lowercase;
+  color: var(--brown-700);
+}
+
+.participation__cards {
+  display: flex;
+  gap: 36px;
+}
+
+.participation__card {
+  position: relative;
+  flex: 1;
+  min-height: 451px;
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.participation__lotus {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 88%;
+  opacity: 0.13;
+  pointer-events: none;
+}
+
+.participation__card:nth-child(3) .participation__lotus {
+  top: 16.6%;
+  left: -11%;
+  width: 94.1%;
+  transform: none;
+}
+
+.participation__card-inner {
+  position: relative;
+  z-index: 1;
+  width: 290px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.participation__card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.participation__card-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 1;
+  letter-spacing: -0.75px;
+  text-align: center;
+  color: var(--brown-900);
+}
+
+.participation__card-desc {
+  font-size: 18px;
+  line-height: 1.21;
+  text-align: center;
+  color: var(--text-brown);
+}
+
+.participation__btn {
+  width: 290px;
+  text-align: center;
+  background: var(--orange);
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 400;
+  padding: 14px 0;
+  border-radius: 40px;
+  transition: filter 0.2s ease;
+}
+
+.participation__btn:hover {
+  filter: brightness(1.06);
+}
+
+.participation__divider {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  width: 1060px;
+  max-width: 90%;
+  opacity: 1;
+  pointer-events: none;
+}
+
+@media (max-width: 820px) {
+  .participation__head {
+    text-align: center;
+  }
+  /* горизонтальний скрол карток (як у макеті) */
+  .participation__cards {
+    gap: 16px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin: 0 -16px;
+    padding: 4px 16px;
+  }
+  .participation__cards::-webkit-scrollbar {
+    display: none;
+  }
+  .participation__card {
+    flex: 0 0 252px;
+    min-height: 305px;
+  }
+  .participation__card-inner {
+    width: 196px;
+    gap: 20px;
+  }
+  .participation__card-title {
+    font-size: 24px;
+  }
+  .participation__card-desc {
+    font-size: 12px;
+  }
+  .participation__subtitle {
+    font-size: 18px;
+  }
+  .participation__btn {
+    width: 196px;
+  }
+  .participation__curve,
+  .participation__leaves2,
+  .participation__star {
+    display: none;
+  }
+}

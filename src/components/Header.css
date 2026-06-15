@@ -1,0 +1,217 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+}
+
+.header__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.header__logo {
+  flex-shrink: 0;
+}
+
+.header__logo img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.header__link {
+  font-size: 16px;
+  font-weight: 500;
+  color: #3b2720;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.header__link:hover {
+  color: var(--orange);
+}
+
+.header__lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #3b2720;
+}
+
+.header__contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--white);
+  color: var(--orange);
+  font-size: 16px;
+  font-weight: 500;
+  padding: 4px 4px 4px 20px;
+  border: 1px solid var(--orange);
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.header__contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 47px;
+  height: 47px;
+  border-radius: 50%;
+  background: var(--orange);
+}
+
+/* бургер-кнопка (тільки моб.) */
+.header__burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.header__burger span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  border-radius: 2px;
+  background: #3b2720;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.header__burger.is-open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.header__burger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.header__burger.is-open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* висувне меню */
+.header__drawer {
+  display: none;
+}
+
+@media (max-width: 1080px) {
+  .header__menu {
+    gap: 22px;
+  }
+}
+
+@media (max-width: 900px) {
+  .header__inner {
+    padding: 16px;
+  }
+  .header__logo img {
+    width: 48px;
+    height: 48px;
+  }
+  .header__menu,
+  .header__contact {
+    display: none;
+  }
+  .header__burger {
+    display: flex;
+  }
+
+  /* фон шапки під час відкритого меню */
+  .header.is-open .header__inner {
+    background: var(--bg);
+  }
+
+  .header__drawer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin: 0;
+    padding: 0 16px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    background: var(--bg);
+    transition: max-height 0.3s ease, opacity 0.25s ease, padding 0.3s ease;
+  }
+  .header__drawer.is-open {
+    max-height: 480px;
+    opacity: 1;
+    padding: 8px 16px 28px;
+  }
+
+  .header__drawer-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .header__drawer-link {
+    font-size: 16px;
+    font-weight: 500;
+    color: #331205;
+  }
+  .header__drawer-link:active {
+    color: var(--orange);
+  }
+
+  /* перемикач мови RU | UKR */
+  .header__drawer-lang {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .header__drawer-lang span:not(.header__drawer-lang-sep) {
+    color: #b8b8b8;
+  }
+  .header__drawer-lang span.is-active {
+    color: #331205;
+  }
+  .header__drawer-lang-sep {
+    width: 1px;
+    height: 20px;
+    background: #b8b8b8;
+  }
+
+  /* кнопка "Зв'язатися" — біла з помаранчевою рамкою, іконка зліва */
+  .header__drawer-contact {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: var(--white);
+    color: var(--orange);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px;
+    border: 1px solid var(--orange);
+    border-radius: 100px;
+  }
+  .header__drawer-contact .header__contact-icon {
+    position: absolute;
+    left: 6px;
+    width: 38px;
+    height: 38px;
+  }
+}

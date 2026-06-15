@@ -1,0 +1,263 @@
+.ladder {
+  background: var(--bg);
+  padding: 90px 0 0;
+}
+
+.ladder__inner {
+  max-width: 1087px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.ladder__title {
+  color: var(--olive);
+  margin-bottom: 40px;
+}
+
+/* колонка таймлайна зліва + картки справа */
+.ladder__rows {
+  position: relative;
+  padding-left: 183px;
+}
+
+/* суцільна вертикальна лінія (починається під петлею, йде до стику з секцією "участь") */
+.ladder__line {
+  position: absolute;
+  left: 38px;
+  top: 316px;
+  bottom: -49px;
+  width: 4px;
+  background: var(--brown-700);
+}
+
+/* верхня крапка — з відступом 10px до петлі/лінії, як в оригіналі */
+.ladder__top-dot {
+  position: absolute;
+  left: 33px;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--brown-700);
+}
+
+/* декоративна петля вгорі (експорт геометрії з Figma) */
+.ladder__loop {
+  position: absolute;
+  left: -29px;
+  top: 24px;
+  width: 72px;
+  height: auto;
+  pointer-events: none;
+}
+
+.ladder__row {
+  position: relative;
+  margin-bottom: 48px;
+}
+
+/* емблема — золоте коло по центру лінії, у лівому жолобі */
+.ladder__node {
+  position: absolute;
+  left: -174px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 7px var(--bg);
+  z-index: 2;
+}
+
+.ladder__node img {
+  width: 62px;
+  height: 62px;
+  object-fit: contain;
+}
+
+/* картка */
+.ladder__card {
+  position: relative;
+  min-height: 474px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--brown-900);
+}
+
+.ladder__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ladder__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    #331205 0%,
+    #331205 28%,
+    rgba(51, 18, 5, 0.6) 42%,
+    rgba(51, 18, 5, 0) 60%
+  );
+}
+
+.ladder__content {
+  position: relative;
+  z-index: 1;
+  padding: 36px 24px 36px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 540px;
+  color: var(--white);
+}
+
+.ladder__tags {
+  display: flex;
+  gap: 8px;
+}
+
+.ladder__badge {
+  background: var(--gold);
+  color: var(--text-dark);
+  font-size: 14px;
+  padding: 10px 14px;
+  border-radius: 10px;
+}
+
+.ladder__tag {
+  color: var(--white);
+  font-size: 14px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.62);
+}
+
+.ladder__name {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.ladder__pill {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--white);
+  border-radius: 100px;
+  padding: 4px;
+}
+
+.ladder__date {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  padding: 4px 4px 4px 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--brown-700);
+  white-space: nowrap;
+}
+
+.ladder__price {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  background: var(--gold);
+  border-radius: 100px;
+  padding: 4px 14px 4px 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--brown-700);
+  white-space: nowrap;
+}
+
+.ladder__points {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ladder__points li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.21;
+  color: var(--white);
+}
+
+.ladder__points li::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 9px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--white);
+}
+
+.ladder__cta {
+  align-self: flex-start;
+  margin-top: 0;
+}
+
+@media (max-width: 820px) {
+  .ladder__rows {
+    padding-left: 0;
+  }
+  .ladder__line,
+  .ladder__loop,
+  .ladder__top-dot,
+  .ladder__node {
+    display: none;
+  }
+  /* фото — банер зверху, контент на суцільному темному низом */
+  .ladder__card {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    background: var(--brown-900);
+  }
+  .ladder__photo {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 250px;
+    flex-shrink: 0;
+  }
+  .ladder__overlay {
+    inset: 0 0 auto 0;
+    height: 270px;
+    background: linear-gradient(180deg, rgba(51, 18, 5, 0) 45%, #331205 100%);
+  }
+  .ladder__content {
+    max-width: none;
+    margin-top: -26px;
+    padding: 0 20px 28px;
+    gap: 18px;
+  }
+  .ladder__name {
+    font-size: 24px;
+  }
+  .ladder__points li {
+    font-size: 14px;
+  }
+  .ladder__cta {
+    align-self: stretch;
+    justify-content: center;
+    font-size: 18px;
+  }
+}

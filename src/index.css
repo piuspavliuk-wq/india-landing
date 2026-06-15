@@ -1,0 +1,135 @@
+:root {
+  /* Колірні токени з макета Figma */
+  --bg: #f7f3ec;
+  --bg-alt: #f1e6da;
+  --brown-900: #331205;
+  --brown-700: #7b3306;
+  --olive: #595a45;
+  --text-dark: #03010e;
+  --text-brown: #3b2720;
+  --orange: #ff6e00;
+  --gold: #f2d7a9;
+  --cream-light: #ffefd7;
+  --white: #ffffff;
+  --muted: #b8b8b8;
+
+  --font-display: 'Cormorant', serif;
+  --font-body: 'Inter', sans-serif;
+
+  --container: 1200px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-dark);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.21;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-weight: 500;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Заголовок секції: Cormorant 500 52px uppercase */
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 52px;
+  line-height: 1.21;
+  text-transform: uppercase;
+  color: var(--brown-700);
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 28px;
+  }
+}
+
+/* Помаранчева кнопка-пігулка зі стрілкою в колі */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--orange);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 24px;
+  font-weight: 400;
+  padding: 16px 28px;
+  border: 1px solid var(--white);
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: filter 0.2s ease;
+}
+
+.btn-pill:hover {
+  filter: brightness(1.06);
+}
+
+.btn-pill__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--white);
+  flex-shrink: 0;
+}
+
+.btn-pill__arrow svg {
+  display: block;
+}
