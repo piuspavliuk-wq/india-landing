@@ -91,14 +91,19 @@
 .ladder__photo {
   position: absolute;
   inset: 0;
+  overflow: hidden;
+}
+
+.ladder__photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 /* Золотий Трикутник, Джйотірлінги: купол/будівля зміщені до правого краю */
-.ladder__row:nth-of-type(3) .ladder__photo,
-.ladder__row:nth-of-type(5) .ladder__photo {
+.ladder__row:nth-of-type(3) .ladder__photo img,
+.ladder__row:nth-of-type(5) .ladder__photo img {
   transform: scale(1.2) translateX(20%);
   transform-origin: center;
 }
@@ -245,6 +250,24 @@
     height: 250px;
     flex-shrink: 0;
   }
+  /* на мобільному кадруємо кожне фото так, щоб головний об'єкт був по центру,
+     з невеликим зумом */
+  .ladder__row:nth-of-type(1) .ladder__photo img {
+    object-position: 100% center;
+    transform: scale(2) translateX(-24%);
+  }
+  .ladder__row:nth-of-type(3) .ladder__photo img {
+    object-position: 47% center;
+    transform: scale(1.25);
+  }
+  .ladder__row:nth-of-type(4) .ladder__photo img {
+    object-position: 82% center;
+    transform: scale(1.7) translateX(-15%);
+  }
+  .ladder__row:nth-of-type(5) .ladder__photo img {
+    object-position: 52% center;
+    transform: scale(2);
+  }
   .ladder__overlay {
     inset: 0 0 auto 0;
     height: 270px;
@@ -256,8 +279,16 @@
     padding: 0 20px 28px;
     gap: 18px;
   }
+  /* теги, назву та пігулку з датою/ціною центруємо */
+  .ladder__tags {
+    justify-content: center;
+  }
   .ladder__name {
     font-size: 24px;
+    text-align: center;
+  }
+  .ladder__pill {
+    align-self: center;
   }
   .ladder__points li {
     font-size: 14px;

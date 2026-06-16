@@ -39,7 +39,9 @@ export default function Ladder() {
               )}
 
               <article className="ladder__card">
-                <img src={PHOTOS[i]} alt="" className="ladder__photo" />
+                <div className="ladder__photo">
+                  <img src={PHOTOS[i]} alt="" />
+                </div>
                 <div className="ladder__overlay" />
 
                 <div className="ladder__content">
