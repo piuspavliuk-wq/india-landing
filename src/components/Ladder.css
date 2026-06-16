@@ -96,6 +96,13 @@
   object-fit: cover;
 }
 
+/* Золотий Трикутник, Джйотірлінги: купол/будівля зміщені до правого краю */
+.ladder__row:nth-of-type(3) .ladder__photo,
+.ladder__row:nth-of-type(5) .ladder__photo {
+  transform: scale(1.2) translateX(20%);
+  transform-origin: center;
+}
+
 .ladder__overlay {
   position: absolute;
   inset: 0;

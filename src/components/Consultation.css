@@ -63,8 +63,9 @@
 }
 
 .consult__logo {
-  width: 70px;
-  height: 70px;
+  width: 120px;
+  height: 120px;
+  transform: translateY(-40px);
   object-fit: contain;
 }
 
@@ -180,6 +181,11 @@
   }
   .consult__heading::before {
     inset: -67px -10px -18px;
+  }
+  .consult__logo {
+    width: 92px;
+    height: 92px;
+    transform: translateY(-54px);
   }
   .consult__title {
     font-size: 30px;
