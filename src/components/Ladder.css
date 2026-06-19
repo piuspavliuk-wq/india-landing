@@ -268,10 +268,18 @@
     object-position: 52% center;
     transform: scale(2);
   }
+  /* сильніший градієнт: доходить до суцільного кольору раніше за нижній
+     край фото (250px ≈ 93% оверлея), тож стику фото з низом не видно */
   .ladder__overlay {
     inset: 0 0 auto 0;
     height: 270px;
-    background: linear-gradient(180deg, rgba(51, 18, 5, 0) 45%, #331205 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(51, 18, 5, 0) 22%,
+      rgba(51, 18, 5, 0.55) 52%,
+      rgba(51, 18, 5, 0.9) 74%,
+      #331205 86%
+    );
   }
   .ladder__content {
     max-width: none;

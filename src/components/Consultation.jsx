@@ -12,6 +12,18 @@ export default function Consultation() {
   const { t } = useLang()
   const c = t.consult
 
+  // Перенос заголовка перед "на" — лише на мобільному (керується CSS),
+  // працює для UA "Записатися на..." і RU "Записаться на...".
+  const titleMatch = c.title.match(/^(.*?)\s(на\s.*)$/i)
+  const title = titleMatch ? (
+    <>
+      {titleMatch[1]} <br className="consult__title-br" />
+      {titleMatch[2]}
+    </>
+  ) : (
+    c.title
+  )
+
   return (
     <section className="consult" id="consultation">
       <div className="consult__card">
@@ -23,7 +35,7 @@ export default function Consultation() {
         <div className="consult__content">
           <img src={logo} alt="Turiya" className="consult__logo" />
           <div className="consult__heading">
-            <h2 className="consult__title">{c.title}</h2>
+            <h2 className="consult__title">{title}</h2>
             <p className="consult__subtitle">{c.subtitle}</p>
           </div>
 

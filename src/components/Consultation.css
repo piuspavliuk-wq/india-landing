@@ -100,6 +100,11 @@
   color: var(--cream-light);
 }
 
+/* перенос усередині заголовка вмикається лише на мобільному */
+.consult__title-br {
+  display: none;
+}
+
 .consult__subtitle {
   font-weight: 300;
   font-size: 36px;
@@ -160,8 +165,17 @@
 
 @media (max-width: 700px) {
   .consult__card {
-    height: 560px;
+    height: 600px;
     margin: 0 16px;
+  }
+  /* світліший верх — видно купол храму за логотипом */
+  .consult__overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(51, 18, 5, 0.32) 0%,
+      rgba(51, 18, 5, 0.6) 42%,
+      rgba(51, 18, 5, 0.92) 100%
+    );
   }
   .consult__mandala {
     width: 590px;
@@ -175,22 +189,44 @@
     top: -553px;
     right: -581px;
   }
-  /* скляна підкладка — 14px від країв картки */
-  .consult__heading {
-    width: 100%;
-  }
-  .consult__heading::before {
-    inset: -67px -10px -18px;
+  .consult__content {
+    gap: 20px;
   }
   .consult__logo {
-    width: 92px;
-    height: 92px;
-    transform: translateY(-54px);
+    width: 96px;
+    height: 96px;
+    transform: translateY(-26px);
+  }
+  /* скляна підкладка опускається нижче логотипа, вужча з боків */
+  .consult__heading {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  .consult__heading::before {
+    inset: -16px -14px -16px;
   }
   .consult__title {
-    font-size: 30px;
+    font-size: 28px;
+  }
+  .consult__title-br {
+    display: inline;
   }
   .consult__subtitle {
-    font-size: 24px;
+    font-size: 21px;
+    text-transform: lowercase;
+  }
+  .consult__btn {
+    padding: 18px 22px;
+    font-size: 20px;
+  }
+  .consult__social-label {
+    text-transform: capitalize;
+  }
+  .consult__social-icons {
+    gap: 18px;
+  }
+  .consult__social-circle {
+    width: 56px;
+    height: 56px;
   }
 }

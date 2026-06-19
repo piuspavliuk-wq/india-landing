@@ -9,6 +9,7 @@ export default function Doubts() {
   return (
     <section className="doubts" id="doubts">
       <div className="container doubts__inner">
+        <img src={photo} alt="" className="doubts__photo" />
         <h2 className="section-title doubts__title">{d.title}</h2>
 
         <div className="doubts__rows">
@@ -18,7 +19,6 @@ export default function Doubts() {
               <p className="doubts__row-text">{item.text}</p>
             </div>
           ))}
-          <img src={photo} alt="" className="doubts__photo" />
         </div>
       </div>
     </section>

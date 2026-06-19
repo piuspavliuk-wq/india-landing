@@ -4,6 +4,7 @@
 }
 
 .doubts__inner {
+  position: relative;
   max-width: 1200px;
 }
 
@@ -49,10 +50,12 @@
   color: var(--brown-700);
 }
 
+/* десктоп: маленьке фото плаває по центру поверх карток
+   (тепер позиціонується відносно .doubts__inner, тому top більший) */
 .doubts__photo {
   position: absolute;
   left: 50%;
-  top: 100px;
+  top: 230px;
   transform: translateX(-50%);
   width: 193px;
   height: 258px;
@@ -81,7 +84,13 @@
     font-size: 18px;
     line-height: 1.22;
   }
+  /* мобільний: велике фото на всю ширину, зверху над заголовком */
   .doubts__photo {
-    display: none;
+    position: static;
+    transform: none;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 343 / 457;
+    margin-bottom: 28px;
   }
 }
